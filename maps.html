@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+ 
+    <link rel="stylesheet" href="style.css">
+    <title>Marker Clustering</title>
+
+        <header>
+            <div class="collapse bg-success" id="navbarHeader">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                  </div>
+                  <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                      <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="navbar navbar-dark bg-success box-shadow">
+              <div class="container d-flex justify-content-between">
+                <a href="./index.html" class="navbar-brand d-flex align-items-center">
+                  <img src="./eco_planet_logo.png" width="25px">
+                  <strong>EcoPerú</strong>
+                </a>
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button> -->
+              </div>
+            </div>
+          </header>
+          <div class="mapas"></div>
+          <div class="container">
+              <div class="row">
+                <div class="col col-4 d-flex justify-content-end">
+                  <button type="button" class="btn btn-danger" data-toggle="" data-target="" style="margin-top: 12px;margin-bottom: 12px;">
+                    <i class="fas fa-map-marker-alt" onclick="window.location.href = './maps.html'"></i>
+                  </button>
+                </div>
+                <div class="col col-4 d-flex justify-content-end">
+                    <button type="button" class="btn btn-danger" data-toggle="" data-target="#id_estado" style="margin-top: 12px;margin-bottom: 12px;">
+                      <i class="fas fa-book-open"  onclick="window.location.href = './comoreciclar.html'"></i>
+                    </button>
+                  </div>
+                  <div class="col col-4 d-flex justify-content-end">
+                      <button type="button" class="btn btn-danger" data-toggle="" data-target="#id_estado" style="margin-top: 12px;margin-bottom: 12px;">
+                        <i class="fas fa-barcode"  onclick="window.location.href = './index.html'"></i>
+                      </button>
+                    </div>
+              </div>
+          </div>
+          <h3>Zonas</h3>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+var clusterStyles = [
+  {
+    textColor: 'white',
+    url: 'path/to/smallclusterimage.png',
+    height: 50,
+    width: 50
+  },
+ {
+    textColor: 'white',
+    url: 'path/to/mediumclusterimage.png',
+    height: 50,
+    width: 50
+  },
+ {
+    textColor: 'white',
+    url: 'path/to/largeclusterimage.png',
+    height: 50,
+    width: 50
+  }
+];
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: {lat: -12.100712, lng:-76.994488}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+
+         // colocar los puntos xd
+         {lat: -12.090268, lng:  -77.002433},
+        {lat: -12.088358, lng: -77.003484},
+        {lat: -12.090635, lng:  -77.004997},
+        {lat: -12.088558, lng:  -77.000502},
+      
+
+        {lat: -12.104181, lng:   -76.993692},
+        {lat: -12.104714, lng:   -76.994882},
+     
+
+        {lat: -12.096686, lng:    -76.984960},
+        {lat: -12.093405, lng:   -76.982705},
+        {lat: -12.094658, lng:    -76.981253},
+        {lat: -12.096642, lng:    -76.983391},
+        {lat: -12.097454, lng:      -76.985043},
+        {lat: -12.097627, lng:     -76.988614},
+        {lat: -12.102814, lng:    -76.987246},
+      ]
+     
+
+
+
+
+    </script>
+    <hr>
+    <h4>Leyenda:</h4>
+    <div class="row">
+      <div class="col col-4 d-flex justify-content-center" style="margin-top: 30px">
+        <button type="button" class="btn btn-danger"><i class="fas fa-map-marker-alt"></i></button>
+      </div>
+      <div class="col col-8 d-flex justify-content-center" style="margin-top: 30px">
+        <button type="button" class="btn btn-light" style="width: 100%;" onclick="window.location.href = './login.html'">
+        Zonas con Mayor Incidencia</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-4 d-flex justify-content-center" style="margin-top: 30px">
+        <button type="button" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i></button>
+      </div>
+      <div class="col col-8 d-flex justify-content-center" style="margin-top: 30px">
+        <button type="button" class="btn btn-light" style="width: 100%;" onclick="window.location.href = './login.html'">
+        Zonas con Menor Incidencia</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-4 d-flex justify-content-center" style="margin-top: 30px">
+        <button type="button" class="btn btn-success"><i class="fas fa-map-marker-alt"></i></button>
+      </div>
+      <div class="col col-8 d-flex justify-content-center" style="margin-top: 30px">
+        <button type="button" class="btn btn-light" style="width: 100%;" onclick="window.location.href = './login.html'">
+        Zonas con Normalidad Incidencia</button>
+      </div>
+    </div>
+</div>
+    
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+    </script>
+  </body>
+</html>

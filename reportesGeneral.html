@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+
+    <header>
+      <div class="collapse bg-success" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-success box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <img src="./eco_planet_logo.png" width="25px">
+            <strong>EcoPerú</strong>
+          </a>
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+        </div>
+      </div>
+    </header>
+    <style>
+    .btn-danger{
+      background-color: #00e676;
+      border: #00e676;
+    }
+    .btn-danger:hover{
+      background-color: darkgreen;
+      border: darkgreen;
+    }
+    .row{
+     margin-top: 10px;
+    }
+    .xd{
+      background-color: crimson;
+    }
+    .btn span{
+    font-size: 13px;
+    line-height:normal  !important;
+    }
+    </style>
+    <div class="container">
+      <div class="row">
+        <div class="col col-3 d-flex justify-content-end">
+          <button type="button" class="btn btn-danger xd" data-toggle="" data-target="" style="margin-top: 12px;margin-bottom: 12px;">
+            <i class="fas fa-map-marker-alt" onclick="window.location.href = './maps.html'"></i>
+            <span>Críticos</span>
+          </button>
+        </div>
+        <div class="col col-3 d-flex justify-content-end">
+            <button type="button" class="btn btn-danger" data-toggle="" data-target="#id_estado" style="margin-top: 12px;margin-bottom: 12px;">
+              <i class="fas fa-book-open"  onclick="window.location.href = './comoreciclar.html'"></i>
+              <span>Aprende</span>
+            </button>
+          </div>
+          <div class="col col-3 d-flex justify-content-end">
+              <button type="button" class="btn btn-danger" data-toggle="" data-target="#id_estado" style="margin-top: 12px;margin-bottom: 12px;">
+                <i class="fas fa-barcode"  onclick="window.location.href = './reportesGeneral.html'"></i>
+                <span></span>
+              </button>
+            </div>
+            <div class="col col-3 d-flex justify-content-end">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#id_estado" style="margin-top: 12px;margin-bottom: 12px;">
+                  <i class="fas fa-edit"></i>
+                  <span>Publicar</span>
+                </button>
+              </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col col-sm-12">
+
+<!-- Modal -->
+<div class="modal fade" id="id_estado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Estado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i></button>
+        <button type="button" class="btn btn-primary"><i class="fas fa-camera" onclick="window.location.href = './camera.html'"></i></button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" >Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="id_filtros" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"> filtros</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Calidad Ambiental
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Calidad de Aire
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Reciclaje
+          </label>
+        </div>
+
+      </div>
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        </div>
+
+      </div>
+
+        <div class="card">
+        <div class="card-header">
+          Carmen Coral
+        </div>
+<style>
+  .card{
+
+margin-top: 15px;
+  }
+  </style>
+        <div class="card-body">
+          <h5 class="card-title">Basura acumulada en San Borja</h5>
+          <p class="card-text">Hoy en la mañana encontre un tumulto de basura en la 
+          Ubicación:...</p>
+          <img width="100%" src="https://e.rpp-noticias.io/normal/2017/09/12/120512_480789.jpg">
+          <br>
+          <br>
+
+          <style>
+          .like img{
+            width: 22px;
+            height: 22px;
+            z-index: 1000;
+         margin: 0px 10px 0px 10px;
+          }
+          .like{
+          right: 0;
+          }
+      
+          </style>
+        <div class="like">
+            <a href="#"  >23 <img src="icon/like.png" alt=""></a>
+            <a href="#"  >55 <img src="icon/dislike.png" alt=""></a>
+            <a href=""><ins>Compartir</ins></a>
+        </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="card">
+        <div class="card-header">
+          Carmen Coral
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Basura acumulada en Av. Aviación</h5>
+          <p class="card-text">Eso de las 9am nadie paso a recoger la basura de ...</p>
+          <img width="100%" src="https://multimedia.larepublica.pe/342x192/larepublica/imagen/2018/11/21/noticia-1542853870-bellavista-basura-5.jpg">
+          <br>
+          <br>
+          <div class="like">
+              <a href="#"  >53 <img src="icon/like.png" alt=""></a>
+              <a href="#"  >23 <img src="icon/dislike.png" alt=""></a>
+              <a href=""><ins>Compartir</ins></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

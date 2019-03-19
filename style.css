@@ -1,0 +1,18 @@
+.mapas{
+position: absolute;
+margin-top: 300px !important;
+    height: 300px ;
+}
+h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.cuadros{
+    position: absolute;
+    display: inline-block
+}
+
+
+/* ---------------------------- */
+
